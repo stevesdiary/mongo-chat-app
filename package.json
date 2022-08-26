@@ -1,0 +1,30 @@
+{
+  "name": "mongochatapp",
+  "version": "1.0.0",
+  "description": "Simple chat app using socket.io and mongoDB",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stevesdiary/mongo-chat-app.git"
+  },
+  "keywords": [
+    "chat",
+    "application",
+    "app",
+    "mongo",
+    "sockets"
+  ],
+  "author": "Stephen Oyeyemi",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/stevesdiary/mongo-chat-app/issues"
+  },
+  "homepage": "https://github.com/stevesdiary/mongo-chat-app#readme",
+  "dependencies": {
+    "mongodb": "^4.9.0",
+    "socket.io": "^4.5.1"
+  }
+}
