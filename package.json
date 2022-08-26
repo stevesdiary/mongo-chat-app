@@ -4,7 +4,7 @@
   "description": "Simple chat app using socket.io and mongoDB",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
@@ -24,6 +24,7 @@
   },
   "homepage": "https://github.com/stevesdiary/mongo-chat-app#readme",
   "dependencies": {
+    "express": "^4.18.1",
     "mongodb": "^4.9.0",
     "socket.io": "^4.5.1"
   }
