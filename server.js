@@ -11,7 +11,7 @@ mongodb.connect("mongodb+srv://chatapp:abc789@cluster0.jqugssm.mongodb.net/?retr
    console.log("MongoDB connected");
 
    //connect to socket.io
-   client.on('connection',function(){
+   client.on('connection',function(socket){
    let chat = db.collection('chats');
 
    // Create function to send status
@@ -48,7 +48,7 @@ mongodb.connect("mongodb+srv://chatapp:abc789@cluster0.jqugssm.mongodb.net/?retr
             })
          }
       })
-      
+
       //Handle clear
       socket.on('clear', function(data){
          // Remove all chats from the collection
