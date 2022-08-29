@@ -1,8 +1,12 @@
 const mongodb = require('mongodb').MongoClient;
-const client = require('socket.io').sockets;
+const client = require('socket.io').Socket;
+// import { client } from "socket.io";
+// const client = require('socket.io').client;
+const { Server } = require("socket.io");
 const express = require('express');
 const app = express();
 //cconnet to mongodb
+console.log({client})
 
 mongodb.connect("mongodb+srv://chatapp:abc789@cluster0.jqugssm.mongodb.net/?retryWrites=true&w=majority", (err,db)=> {
    if(err){
@@ -10,8 +14,9 @@ mongodb.connect("mongodb+srv://chatapp:abc789@cluster0.jqugssm.mongodb.net/?retr
    }
    console.log("MongoDB connected");
 
+   
    //connect to socket.io
-   client.on('connection',function(socket){
+   client.on('connection', function(socket){
    let chat = db.collection('chats');
 
    // Create function to send status
@@ -44,7 +49,7 @@ mongodb.connect("mongodb+srv://chatapp:abc789@cluster0.jqugssm.mongodb.net/?retr
                sendStatus({
                   message: 'Message sent',
                   clear: true
-               })
+               });
             })
          }
       })
@@ -63,5 +68,4 @@ mongodb.connect("mongodb+srv://chatapp:abc789@cluster0.jqugssm.mongodb.net/?retr
 
 app.listen(4000, ()=>{
    console.log("App listening on port 4000")
-   
 })
