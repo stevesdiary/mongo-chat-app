@@ -101,9 +101,16 @@
                      message: textarea.value
                   });
                   event.preventDefault();
-                  
                }
             })
+            //Handle chats clear
+            clearBtn.addEventListener('click', function() {
+               socket.emit('clear');
+            });
+            // Clear messages
+            socket.on('cleared', function(){
+               messages.textContent = '';
+            });
          }
       })();
    </script>

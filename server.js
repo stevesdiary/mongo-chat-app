@@ -1,7 +1,5 @@
 const mongodb = require('mongodb').MongoClient;
 const client = require('socket.io').Socket;
-// import { client } from "socket.io";
-// const client = require('socket.io').client;
 const { Server } = require("socket.io");
 const express = require('express');
 const app = express();
